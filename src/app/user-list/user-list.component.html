@@ -1,0 +1,95 @@
+<div *ngIf="isLoading; else userList">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<ng-template #userList>
+  <app-header (searchChange)="onSearchChange($event)"></app-header>
+  <div class="container mt-3 mb-4">
+    <div class="col-lg-12 mt-4 mt-lg-0">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="user-dashb table-responsive mb-0 bg-white p-4 shadow-sm">
+            <table class="table manage-candidates-top mb-0">
+              <thead>
+                <tr>
+                  <th class="text-center w-12rem">ID</th>
+                  <th>User Name</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="users.length > 0; else elseTemplate">
+                <tr class="candidates-list"  *ngFor="let user of users" (click)="navigateToUserDetails(user.id)">
+                  <td class="candidate-list-favourite-time mr-5 text-center">
+                    <span class="candidate-list-time order-1" > {{user.id}}</span>
+                  </td>
+                  <td class="title">
+                    <div class="thumb">
+                      <img class="img-fluid" src={{user.avatar}} alt>
+                    </div>
+                    <div class="candidate-list-details">
+                      <div class="candidate-list-info">
+                        <div class="candidate-list-title">
+                          <h5 class="mb-0">{{user.first_name + " " + user.last_name}}</h5>
+                        </div>
+                        <div class="candidate-list-option">
+                          <ul class="list-unstyled">
+                            <li><i class="fas fa-filter pr-1"></i>{{user.email}}</li>
+                            <!-- <li><i class="fas fa-map-marker-alt pr-1"></i>Rolling Meadows, IL 60008</li> -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+  
+                </tr>
+                
+              </tbody>
+             
+              <ng-template #elseTemplate >
+              
+                
+                  <tbody>
+                    <tr class="candidates-list"  >
+                      <td class="title">
+                      </td>
+                      <td class="candidate-list-favourite-time mr-5 text-center">
+                        <div class="dcontent">
+                          <h1 class="notfound">
+                            Sorry, We Couldn't Find The ID you wrote
+                          </h1>
+                      </div>
+                      </td>
+      
+                    </tr>
+                  </tbody>
+                </ng-template>
+            </table>
+            
+            
+            
+            
+            
+<div class="text-center mt-3 mt-sm-3" *ngIf="users.length >= 6;">
+  <ul class="pagination justify-content-center mb-0">
+  <li class="page-item click"> <a class="page-link"(click)="previousPage()">Prev</a> </li>
+  <li class="page-item"><a class="page-link"> Page {{currentPage}}</a></li>
+  <li class="page-item click"> <a class="page-link" [ngClass]="{ 'disabled-link': disn }"  (click)="nextPage($event)">Next</a> </li>
+  </ul>
+  </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ng-template>
+
+<!-- <div *ngIf="users.length > 0; else elseTemplate">
+</div>
+
+<ng-template #elseTemplate>
+  <div class="dcontent">
+    <h1 class="notfound">
+      Sorry, We Couldn't Find The ID you wrote
+    </h1>
+</div>
+</ng-template> -->

@@ -1,0 +1,48 @@
+<div *ngIf="isLoadingdet; else userdetail">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<ng-template #userdetail>
+    <div class="profil mt-5">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-8 w100">
+
+                <div class="card p-3 py-4">
+                    <button (click)="goBack()" class="btn btn-back">Back</button>
+
+                    <div class="text-center">
+                        <img src={{user.avatar}} width="100" class="rounded-circle">
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <h5 class="mt-2 mb-3">{{user.first_name + " " +user.last_name }}</h5>
+                        <span>{{user.email}} </span>
+
+                        <div class="px-4 mt-3 mb-5">
+                            <p class="fonts">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip ex ea commodo consequat. </p>
+
+                        </div>
+
+                        <div class="buttons">
+
+                            <button class="btn btn-outline-primary px-4">Message</button>
+                            <button class="btn btn-primary px-4  ml-5 ms-3">Contact</button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</ng-template>

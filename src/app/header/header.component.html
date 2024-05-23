@@ -1,0 +1,11 @@
+
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <form class="d-flex form-search" role="search">
+        <div>
+          <h1 class="user-text">Users List</h1>
+        </div>
+        <input class="form-control me-2" type="search"placeholder="Search by ID" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}" (ngModelChange)="onSearchChange($event)"  >
+      </form>
+    </div>
+  </nav>

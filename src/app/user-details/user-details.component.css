@@ -1,0 +1,84 @@
+body{
+    height: 100vh !important;
+}
+
+.card{
+    height: 55vh !important;
+    border:none;
+    position:relative;
+    overflow:hidden;
+    border-radius:8px;
+}
+.w100{
+    display: flex;
+    align-items: center;
+    height: 75vh !important;
+}
+.card:before{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color:#E1BEE7;
+    transform:scaleY(1);
+    transition:all 0.5s;
+    /* transform-origin: bottom */
+}
+.row{
+    margin: 0;
+}
+.card:after{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color:#8E24AA;
+    transform:scaleY(0);
+    transition:all 0.5s;
+    /* transform-origin: bottom */
+}
+
+.card:hover::after{
+    transform:scaleY(1);
+}
+
+
+
+
+.buttons button:nth-child(1){
+       border:1px solid #8E24AA !important;
+       color:#8E24AA;
+       height:40px;
+}
+
+.buttons button:nth-child(1):hover{
+       border:1px solid #8E24AA !important;
+       color:#fff;
+       height:40px;
+       background-color:#8E24AA;
+}
+
+.buttons button:nth-child(2){
+       border:1px solid #8E24AA !important;
+       background-color:#8E24AA;
+       color:#fff;
+        height:40px;
+}
+.btn-back{
+    margin-right: auto;
+    width: 6rem;
+    color: white;
+    background-color: rgb(185, 185, 185);
+}
+.btn-back:hover{
+    margin-right: auto;
+    width: 6rem;
+    color: rgb(68, 68, 68);
+    background-color: rgb(235, 235, 235);
+}

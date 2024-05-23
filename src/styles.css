@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.w-12rem{
+    width: 12rem;
+}
+body{
+    background-color: #dfdfdf;
+}
+.click{
+    cursor: pointer;
+}
